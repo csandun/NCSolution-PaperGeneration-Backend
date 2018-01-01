@@ -3,9 +3,34 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27004.2008
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApiService", "ApiService", "{E2750345-5AF0-464C-A9A1-E7772FA0A42C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BussinessService", "BussinessService", "{418DEA57-3ADE-4D37-9E00-8D255B16A7B6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataService", "DataService", "{4FFE10FF-AA4A-45E7-8680-B3A7CE41ADA9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{7D087F24-E8EA-4A90-B60C-DFC2F07D5556}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{F357C0D6-E974-4D98-A893-C7E16208A6A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NCS.PaperGeneration.ApiService", "NCS.PaperGeneration.ApiService\NCS.PaperGeneration.ApiService.csproj", "{1DB52D2C-9C39-4815-AB9C-D7E763668162}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1DB52D2C-9C39-4815-AB9C-D7E763668162}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DB52D2C-9C39-4815-AB9C-D7E763668162}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DB52D2C-9C39-4815-AB9C-D7E763668162}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DB52D2C-9C39-4815-AB9C-D7E763668162}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1DB52D2C-9C39-4815-AB9C-D7E763668162} = {E2750345-5AF0-464C-A9A1-E7772FA0A42C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1310EDE2-EA50-4E39-B603-DDC948EB1519}
