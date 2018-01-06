@@ -2,6 +2,8 @@ using System.Web.Http;
 using WebActivatorEx;
 using NCS.PaperGeneration.ApiService;
 using Swashbuckle.Application;
+using System;
+using System.Xml.XPath;
 
 [assembly: PreApplicationStartMethod(typeof(SwaggerConfig), "Register")]
 
@@ -101,7 +103,7 @@ namespace NCS.PaperGeneration.ApiService
                         // those comments into the generated docs and UI. You can enable this by providing the path to one or
                         // more Xml comment files.
                         //
-                        //c.IncludeXmlComments(GetXmlCommentsPath());
+                        c.IncludeXmlComments(GetXmlCommentsPath());
 
                         // Swashbuckle makes a best attempt at generating Swagger compliant JSON schemas for the various types
                         // exposed in your API. However, there may be occasions when more control of the output is needed.
@@ -250,6 +252,11 @@ namespace NCS.PaperGeneration.ApiService
                         //
                         //c.EnableApiKeySupport("apiKey", "header");
                     });
+        }
+
+        private static string GetXmlCommentsPath()
+        {
+            return System.AppDomain.CurrentDomain.BaseDirectory + @"bin\NCS.PaperGeneration.ApiService.xml";
         }
     }
 }
