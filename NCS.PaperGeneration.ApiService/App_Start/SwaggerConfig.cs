@@ -256,7 +256,7 @@ namespace NCS.PaperGeneration.ApiService
 
         private static string GetXmlCommentsPath()
         {
-            return System.AppDomain.CurrentDomain.BaseDirectory + @"bin\doc.xml";
+            return System.AppDomain.CurrentDomain.BaseDirectory + @"bin\abc.xml";
         }
     }
 }
