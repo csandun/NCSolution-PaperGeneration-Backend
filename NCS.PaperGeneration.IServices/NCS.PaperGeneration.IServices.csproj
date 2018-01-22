@@ -40,7 +40,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IExamService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NCS.PaperGeneration.BussinessService.Common\NCS.PaperGeneration.BussinessService.Common.csproj">
+      <Project>{7CC27A8B-1808-4EFD-A7AD-06D54CC12A4E}</Project>
+      <Name>NCS.PaperGeneration.BussinessService.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NCS.PaperGeneration.Entities\NCS.PaperGeneration.Entities.csproj">
+      <Project>{615C0DF5-15A6-46A5-9BE2-714D92733939}</Project>
+      <Name>NCS.PaperGeneration.Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

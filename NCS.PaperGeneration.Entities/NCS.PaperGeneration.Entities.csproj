@@ -40,13 +40,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommonEntities\AuditableEntity.cs" />
+    <Compile Include="CommonEntities\BaseEntity.cs" />
+    <Compile Include="CommonEntities\Entity.cs" />
+    <Compile Include="CommonEntities\IAuditableEntity.cs" />
+    <Compile Include="CommonEntities\IEntitiy.cs" />
+    <Compile Include="CompactEntities\ExamCompact.cs" />
+    <Compile Include="Entities\Exam.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="CommonEntities\" />
-    <Folder Include="CompactEntities\" />
     <Folder Include="CustomEntities\" />
-    <Folder Include="Entities\" />
     <Folder Include="ExtendedEntities\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
