@@ -21,7 +21,18 @@ namespace NCS.PaperGeneration.ApiService.Controllers
         [Route("getbyid/{id:int}")]
         public Exam GetById(int id)
         {
-           return     _examService.GetById(id);
+
+            Exam exam = null;
+            try
+            {
+                exam = _examService.GetById(id);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw e;
+            }
+            return exam;
         }
     }
 }
