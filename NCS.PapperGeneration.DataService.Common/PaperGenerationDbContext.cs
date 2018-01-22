@@ -23,8 +23,14 @@ namespace NCS.PapperGeneration.DataService.Common
         /// </summary>
         public PaperGenerationDbContext() : base("PaperGenerationDbContext")
         {
+            Database.SetInitializer<PaperGenerationDbContext>(null);
         }
 
         public DbSet<Exam> Exams { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Exam>().ToTable("Exam");
+        }
     }
 }

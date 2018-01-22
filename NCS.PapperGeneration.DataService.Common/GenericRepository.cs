@@ -25,7 +25,7 @@ namespace NCS.PapperGeneration.DataService.Common
     public class GenericRepository<T> : IGenericRepository<T> where T : BaseEntity
     {
         public PaperGenerationDbContext Context;
-        public DbSet<T> DbSet;
+        public IDbSet<T> DbSet;
 
         public GenericRepository(PaperGenerationDbContext context)
         {

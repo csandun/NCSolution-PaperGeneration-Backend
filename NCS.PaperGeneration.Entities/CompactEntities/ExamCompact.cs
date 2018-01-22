@@ -13,9 +13,6 @@ namespace NCS.PaperGeneration.Entities.CompactEntities
     /// </summary>
     public class ExamCompact : AuditableEntity<int>
     {
-        /// <summary>
-        /// Gets or sets the algorithms id.
-        /// </summary>
-        public int AlgorithmId { get; set; }
+        //public int AlgorithmId { get; set; }
     }
 }

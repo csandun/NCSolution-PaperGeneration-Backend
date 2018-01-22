@@ -7,8 +7,6 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-using System;
-
 namespace NCS.PaperGeneration.DataServices
 {
     using System.Linq;
@@ -26,17 +24,7 @@ namespace NCS.PaperGeneration.DataServices
 
         public Exam GetById(int id)
         {
-            Exam firstOrDefault = null;
-            try
-            {
-               firstOrDefault = DbSet.FirstOrDefault(o => o.Id == id);
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-                throw;
-            }
-            return firstOrDefault;
+            return DbSet.FirstOrDefault(o => o.Id == id);
         }
     }
 }

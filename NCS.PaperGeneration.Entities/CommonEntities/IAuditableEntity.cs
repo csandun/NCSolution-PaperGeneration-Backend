@@ -12,7 +12,7 @@ namespace NCS.PaperGeneration.Entities.CommonEntities
 
         string CreatedBy { get; set; }
 
-        DateTime UpdatedDate { get; set; }
+        DateTime? UpdatedDate { get; set; }
 
         string UpdatedBy { get; set; }
     }
