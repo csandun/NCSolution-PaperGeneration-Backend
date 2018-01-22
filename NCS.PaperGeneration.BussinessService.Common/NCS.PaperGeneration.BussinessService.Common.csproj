@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{603B2A6A-5F7C-43E4-A098-361A2368D876}</ProjectGuid>
+    <ProjectGuid>{7CC27A8B-1808-4EFD-A7AD-06D54CC12A4E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>NCS.PaperGeneration.Services</RootNamespace>
-    <AssemblyName>NCS.PaperGeneration.Services</AssemblyName>
+    <RootNamespace>NCS.PaperGeneration.BussinessService.Common</RootNamespace>
+    <AssemblyName>NCS.PaperGeneration.BussinessService.Common</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,25 +40,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ExamService.cs" />
+    <Compile Include="EntityService.cs" />
+    <Compile Include="IEntityService.cs" />
+    <Compile Include="IService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\NCS.PaperGeneration.BussinessService.Common\NCS.PaperGeneration.BussinessService.Common.csproj">
-      <Project>{7CC27A8B-1808-4EFD-A7AD-06D54CC12A4E}</Project>
-      <Name>NCS.PaperGeneration.BussinessService.Common</Name>
-    </ProjectReference>
     <ProjectReference Include="..\NCS.PaperGeneration.Entities\NCS.PaperGeneration.Entities.csproj">
       <Project>{615C0DF5-15A6-46A5-9BE2-714D92733939}</Project>
       <Name>NCS.PaperGeneration.Entities</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\NCS.PaperGeneration.IDataServices\NCS.PaperGeneration.IDataServices.csproj">
-      <Project>{0C9EF44D-72C2-4BDF-9588-674C2773537A}</Project>
-      <Name>NCS.PaperGeneration.IDataServices</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\NCS.PaperGeneration.IServices\NCS.PaperGeneration.IServices.csproj">
-      <Project>{2B725609-B7C5-4068-B662-459E87BA1CF9}</Project>
-      <Name>NCS.PaperGeneration.IServices</Name>
     </ProjectReference>
     <ProjectReference Include="..\NCS.PapperGeneration.DataService.Common\NCS.PapperGeneration.DataService.Common.csproj">
       <Project>{99669887-D976-43F9-B759-EE8993C7E3F6}</Project>

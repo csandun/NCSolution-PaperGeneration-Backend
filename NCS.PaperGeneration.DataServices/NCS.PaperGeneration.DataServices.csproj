@@ -30,7 +30,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -40,7 +47,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ExamRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NCS.PaperGeneration.Entities\NCS.PaperGeneration.Entities.csproj">
+      <Project>{615C0DF5-15A6-46A5-9BE2-714D92733939}</Project>
+      <Name>NCS.PaperGeneration.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NCS.PaperGeneration.IDataServices\NCS.PaperGeneration.IDataServices.csproj">
+      <Project>{0C9EF44D-72C2-4BDF-9588-674C2773537A}</Project>
+      <Name>NCS.PaperGeneration.IDataServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NCS.PapperGeneration.DataService.Common\NCS.PapperGeneration.DataService.Common.csproj">
+      <Project>{99669887-D976-43F9-B759-EE8993C7E3F6}</Project>
+      <Name>NCS.PapperGeneration.DataService.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
