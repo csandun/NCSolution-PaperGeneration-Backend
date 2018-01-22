@@ -14,4 +14,18 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="Id" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="d5bfc421-7779-4da6-b5a3-c6312c49279c" ChangeDateTime="01/22/2018 19:01:53">
+    <Property Name="ElementName" Value="[dbo].[Algorithms].[AlgorithmId]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Algorithms]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Id" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="5cacc3df-9097-4951-8bc9-b9b52aadd81c" ChangeDateTime="01/22/2018 19:01:59">
+    <Property Name="ElementName" Value="[dbo].[Algorithms].[AlgorithmName]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Algorithms]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Name" />
+  </Operation>
 </Operations>
