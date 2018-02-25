@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NCS.PaperGeneration.Entities.Entities
 {
-    class Chapter
+    public class Chapter
     {
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NCS.PaperGeneration.Entities.Entities
 {
-    class Choice
+    public class Choice
     {
     }
 }

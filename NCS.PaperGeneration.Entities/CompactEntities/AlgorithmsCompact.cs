@@ -7,7 +7,7 @@ using NCS.PaperGeneration.Entities.CommonEntities;
 
 namespace NCS.PaperGeneration.Entities.CompactEntities
 {
-    public class Algorithms : AuditableEntity<int>
+    public class AlgorithmsCompact : AuditableEntity<int>
     {
     }
 }

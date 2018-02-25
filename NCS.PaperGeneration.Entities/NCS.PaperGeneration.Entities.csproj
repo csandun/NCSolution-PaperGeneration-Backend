@@ -46,8 +46,28 @@
     <Compile Include="CommonEntities\IAuditableEntity.cs" />
     <Compile Include="CommonEntities\IEntitiy.cs" />
     <Compile Include="CommonEntities\MappingAuditableEntity.cs" />
+    <Compile Include="CompactEntities\AlgorithmsCompact.cs" />
+    <Compile Include="CompactEntities\ChapterCompact.cs" />
+    <Compile Include="CompactEntities\ChoiceCompact.cs" />
+    <Compile Include="CompactEntities\ExamChapterCompact.cs" />
     <Compile Include="CompactEntities\ExamCompact.cs" />
+    <Compile Include="CompactEntities\ImageCompact.cs" />
+    <Compile Include="CompactEntities\QuestionCompact.cs" />
+    <Compile Include="CompactEntities\SavedPaperCompact.cs" />
+    <Compile Include="CompactEntities\SectionCompact.cs" />
+    <Compile Include="CompactEntities\UserExamAttemptCompact.cs" />
+    <Compile Include="CompactEntities\UserExamAttemptQuestionCompact.cs" />
+    <Compile Include="Entities\Algorithms.cs" />
+    <Compile Include="Entities\Chapter.cs" />
+    <Compile Include="Entities\Choice.cs" />
     <Compile Include="Entities\Exam.cs" />
+    <Compile Include="Entities\ExamChapter.cs" />
+    <Compile Include="Entities\Image.cs" />
+    <Compile Include="Entities\Question.cs" />
+    <Compile Include="Entities\SavedPaper.cs" />
+    <Compile Include="Entities\Section.cs" />
+    <Compile Include="Entities\UserExamAttempt.cs" />
+    <Compile Include="Entities\UserExamAttemptQuestion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

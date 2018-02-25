@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NCS.PaperGeneration.Entities.CompactEntities
 {
-    class SectionCompact
+    public class SectionCompact
     {
     }
 }

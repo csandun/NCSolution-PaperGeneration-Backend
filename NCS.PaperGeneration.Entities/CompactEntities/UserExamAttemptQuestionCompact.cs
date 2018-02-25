@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NCS.PaperGeneration.Entities.CompactEntities
 {
-    class UserExamAttemptQuestionCompact
+    public class UserExamAttemptQuestionCompact
     {
     }
 }
