@@ -45,6 +45,7 @@
     <Compile Include="CommonEntities\Entity.cs" />
     <Compile Include="CommonEntities\IAuditableEntity.cs" />
     <Compile Include="CommonEntities\IEntitiy.cs" />
+    <Compile Include="CommonEntities\MappingAuditableEntity.cs" />
     <Compile Include="CompactEntities\ExamCompact.cs" />
     <Compile Include="Entities\Exam.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

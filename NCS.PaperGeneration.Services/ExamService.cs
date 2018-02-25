@@ -20,10 +20,5 @@ namespace NCS.PaperGeneration.Services
             _examRepository = examRepository;
             _unitOfWork = unitOfWork;
         }
-
-        public Exam GetById(int id)
-        {
-            return _examRepository.GetById(id);
-        }
     }
 }

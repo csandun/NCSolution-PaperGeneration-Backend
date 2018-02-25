@@ -25,7 +25,7 @@ namespace NCS.PaperGeneration.ApiService.Controllers
             Exam exam = null;
             try
             {
-                exam = _examService.GetById(id);
+                exam = _examService.GetById(id);                
             }
             catch (Exception e)
             {
@@ -34,5 +34,7 @@ namespace NCS.PaperGeneration.ApiService.Controllers
             }
             return exam;
         }
+
+        p
     }
 }

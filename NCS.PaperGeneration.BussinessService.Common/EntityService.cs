@@ -44,5 +44,10 @@ namespace NCS.PaperGeneration.BussinessService.Common
             _repository.Delete(entity);
             _unitOfWork.Save();
         }
+
+        public T GetById(int id)
+        {
+            return _repository.GetById(id);
+        }
     }
 }
