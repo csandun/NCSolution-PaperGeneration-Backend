@@ -77,7 +77,4 @@
   <ItemGroup>
     <RefactorLog Include="NCS.PaperGeneration.Database.refactorlog" />
   </ItemGroup>
-  <ItemGroup>
-    <PostDeploy Include="DataInsert.sql" />
-  </ItemGroup>
 </Project>

@@ -13,5 +13,6 @@ namespace NCS.PaperGeneration.BussinessService.Common
         void Create(T entity);
         void Delete(T entity);
         void Update(T entity);
+        T GetById(int id);
     }
 }

@@ -25,27 +25,27 @@ namespace NCS.PapperGeneration.DataService.Common
     public class GenericRepository<T> : IGenericRepository<T> where T : BaseEntity
     {
         public PaperGenerationDbContext Context;
-        public IDbSet<T> DbSet;
+        public IDbSet<T> _dbSet;
 
         public GenericRepository(PaperGenerationDbContext context)
         {
             this.Context = context;
-            this.DbSet = context.Set<T>();
+            this._dbSet = context.Set<T>();
         }
 
         public virtual T GetById(object id)
         {
-            return this.DbSet.Find(id);
+            return this._dbSet.Find(id);
         }
 
         public virtual void Insert(T entity)
         {
-            this.DbSet.Add(entity);
+            this._dbSet.Add(entity);
         }
 
        public virtual void Delete(object id)
         {
-            T entityToDelete = this.DbSet.Find(id);
+            T entityToDelete = this._dbSet.Find(id);
             this.Delete(entityToDelete);
         }
 
@@ -53,21 +53,21 @@ namespace NCS.PapperGeneration.DataService.Common
         {
             if (this.Context.Entry(entityToDelete).State == EntityState.Detached)
             {
-                this.DbSet.Attach(entityToDelete);
+                this._dbSet.Attach(entityToDelete);
             }
 
-            this.DbSet.Remove(entityToDelete);
+            this._dbSet.Remove(entityToDelete);
         }
 
        public virtual void Update(T entityToUpdate)
         {
-            this.DbSet.Attach(entityToUpdate);
+            this._dbSet.Attach(entityToUpdate);
             this.Context.Entry(entityToUpdate).State = EntityState.Modified;
         }
 
        public IEnumerable<T> Get(Expression<Func<T, bool>> filter = null, Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null, string includeProperties = "")
         {
-            IQueryable<T> query = this.DbSet;
+            IQueryable<T> query = this._dbSet;
 
             if (filter != null)
             {

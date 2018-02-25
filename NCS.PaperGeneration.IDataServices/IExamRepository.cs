@@ -10,7 +10,6 @@ namespace NCS.PaperGeneration.IDataServices
     using NCS.PapperGeneration.DataService.Common;
 
     public interface IExamRepository : IGenericRepository<Exam>
-    {
-        Exam GetById(int id);
+    {        
     }
 }

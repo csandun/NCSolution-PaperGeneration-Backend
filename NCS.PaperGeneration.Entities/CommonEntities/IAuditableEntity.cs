@@ -10,10 +10,10 @@ namespace NCS.PaperGeneration.Entities.CommonEntities
     {
         DateTime CreatedDate { get; set; }
 
-        string CreatedBy { get; set; }
+        int CreatedBy { get; set; }
 
-        DateTime? UpdatedDate { get; set; }
+        Nullable<DateTime> UpdatedDate { get; set; }
 
-        string UpdatedBy { get; set; }
+        int? UpdatedBy { get; set; }
     }
 }

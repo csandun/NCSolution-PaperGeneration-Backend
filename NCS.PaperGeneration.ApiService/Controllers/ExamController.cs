@@ -18,14 +18,14 @@ namespace NCS.PaperGeneration.ApiService.Controllers
             _examService = examService;
         }
 
-        [Route("getbyid/{id:int}")]
+        [Route("{id:int}")]
         public Exam GetById(int id)
         {
 
             Exam exam = null;
             try
             {
-                exam = _examService.GetById(id);
+                exam = _examService.GetById(id);                
             }
             catch (Exception e)
             {
@@ -34,5 +34,7 @@ namespace NCS.PaperGeneration.ApiService.Controllers
             }
             return exam;
         }
+
+        
     }
 }

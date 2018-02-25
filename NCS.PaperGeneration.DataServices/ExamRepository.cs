@@ -21,10 +21,5 @@ namespace NCS.PaperGeneration.DataServices
             : base(context)
         {
         }
-
-        public Exam GetById(int id)
-        {
-            return DbSet.FirstOrDefault(o => o.Id == id);
-        }
     }
 }
