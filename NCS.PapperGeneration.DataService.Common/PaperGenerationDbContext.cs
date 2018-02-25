@@ -34,8 +34,7 @@ namespace NCS.PapperGeneration.DataService.Common
         {
             modelBuilder.Entity<Exam>().ToTable("Exam");
             modelBuilder.Entity<UserExamAttempt>().ToTable("UserExamAttempt");
-            modelBuilder.Entity<UserExamAttemptQuestion>().ToTable("UserExamAttemptQuestion")
-                .HasKey(o => new { o.UserExamId, o.QuestionId }); ;
+            modelBuilder.Entity<UserExamAttemptQuestion>().ToTable("UserExamAttemptQuestion");                
         }
     }
 }

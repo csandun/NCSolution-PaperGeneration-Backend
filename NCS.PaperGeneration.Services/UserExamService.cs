@@ -3,6 +3,7 @@ using NCS.PaperGeneration.Entities.Entities;
 using NCS.PaperGeneration.IDataServices;
 using NCS.PaperGeneration.IServices;
 using NCS.PapperGeneration.DataService.Common;
+using System.Collections.Generic;
 
 namespace NCS.PaperGeneration.Services
 {
@@ -21,9 +22,9 @@ namespace NCS.PaperGeneration.Services
             _userExamAttemptQuestionRepository = userExamAttemptQuestionRepository;
         }
 
-        public void GetUserExamQuestions(int userExamId)
+        public List<UserExamAttemptQuestion> GetUserExamQuestions(int userExamId)
         {
-            _userExamAttemptQuestionRepository.GetUserExamQuestions(userExamId);
+            return _userExamAttemptQuestionRepository.GetUserExamQuestions(userExamId);
         }
     }
 }

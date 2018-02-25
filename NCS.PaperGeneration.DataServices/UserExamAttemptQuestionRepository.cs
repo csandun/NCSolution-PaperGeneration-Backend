@@ -19,9 +19,10 @@ namespace NCS.PaperGeneration.DataServices
         
         }
 
-        public void GetUserExamQuestions(int id)
+        public List<UserExamAttemptQuestion> GetUserExamQuestions(int id)
         {
-            var examQuestions = _dbSet.Where(o => o.UserExamId == id).ToList<UserExamAttemptQuestion>(); 
+            var examQuestions = _dbSet.Where(o => o.UserExamId == id).ToList<UserExamAttemptQuestion>();
+            return examQuestions;
         }
     }
 }

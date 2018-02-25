@@ -17,7 +17,7 @@ namespace NCS.PaperGeneration.DependencyResolution
     public class IocRegister
     {
         public static void RegisterAll(IUnityContainer container)
-        {
+        {            
             RegisterDataServices(container);
             RegisterServices(container);
         }
@@ -36,7 +36,7 @@ namespace NCS.PaperGeneration.DependencyResolution
             container.RegisterType<DbContext, PaperGenerationDbContext>();
             container.RegisterType(typeof(IGenericRepository<>), typeof(GenericRepository<>));
             container.RegisterType(typeof(IExamRepository), typeof(ExamRepository));
-            container.RegisterType(typeof(IUserExamAttemptRepository), typeof(IUserExamAttemptRepository));
+            container.RegisterType(typeof(IUserExamAttemptRepository), typeof(UserExamAttemptRepository));
             container.RegisterType(typeof(IUserExamAttemptQuestionRepository), typeof(UserExamAttemptQuestionRepository));
         }
     }

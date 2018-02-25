@@ -1,4 +1,5 @@
-﻿using NCS.PaperGeneration.IServices;
+﻿using NCS.PaperGeneration.Entities.Entities;
+using NCS.PaperGeneration.IServices;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,16 +20,15 @@ namespace NCS.PaperGeneration.ApiService.Controllers
 
         [HttpGet]
         [Route("{id:int}/Questions")]
-        public void GetUserExamQuestions(int id)
+        public List<UserExamAttemptQuestion> GetUserExamQuestions(int id)
         {
             try
             {
-                _userExamService.GetUserExamQuestions(id);
+                return _userExamService.GetUserExamQuestions(id);
             }
             catch (Exception e)
             {
-
-                throw;
+                throw e;
             }
         }
     }

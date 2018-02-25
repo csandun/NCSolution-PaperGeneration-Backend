@@ -10,6 +10,6 @@ namespace NCS.PaperGeneration.IServices
 {
     public interface IUserExamService : IEntityService<UserExamAttempt>
     {
-        void GetUserExamQuestions(int userExamId);
+        List<UserExamAttemptQuestion> GetUserExamQuestions(int userExamId);
     }
 }
