@@ -48,6 +48,7 @@ namespace NCS.PaperGeneration.BussinessService.Common
         public T GetById(int id)
         {
             return _repository.GetById(id);
+            _unitOfWork.Save();
         }
     }
 }

@@ -9,5 +9,6 @@ namespace NCS.PaperGeneration.Entities.Entities
 {
     public class UserExamAttemptQuestion : UserExamAttemptQuestionCompact
     {
+        public bool IsAnswered { get; set; }
     }
 }

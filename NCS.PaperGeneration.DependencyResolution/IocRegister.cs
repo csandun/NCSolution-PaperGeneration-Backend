@@ -27,6 +27,7 @@ namespace NCS.PaperGeneration.DependencyResolution
             container.RegisterType(typeof(IEntityService<>), typeof(EntityService<>));
             container.RegisterType(typeof(IService), typeof(IEntityService<>));
             container.RegisterType(typeof(IExamService), typeof(ExamService));
+            container.RegisterType(typeof(IUserExamService), typeof(UserExamService));            
         }
 
         private static void RegisterDataServices(IUnityContainer container)
@@ -35,6 +36,8 @@ namespace NCS.PaperGeneration.DependencyResolution
             container.RegisterType<DbContext, PaperGenerationDbContext>();
             container.RegisterType(typeof(IGenericRepository<>), typeof(GenericRepository<>));
             container.RegisterType(typeof(IExamRepository), typeof(ExamRepository));
+            container.RegisterType(typeof(IUserExamAttemptRepository), typeof(IUserExamAttemptRepository));
+            container.RegisterType(typeof(IUserExamAttemptQuestionRepository), typeof(UserExamAttemptQuestionRepository));
         }
     }
 }

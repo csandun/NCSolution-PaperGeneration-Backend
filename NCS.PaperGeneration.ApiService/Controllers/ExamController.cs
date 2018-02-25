@@ -18,7 +18,7 @@ namespace NCS.PaperGeneration.ApiService.Controllers
             _examService = examService;
         }
 
-        [Route("getbyid/{id:int}")]
+        [Route("{id:int}")]
         public Exam GetById(int id)
         {
 

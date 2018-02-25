@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="ExamRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserExamAttemptQuestionRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NCS.PaperGeneration.Entities\NCS.PaperGeneration.Entities.csproj">

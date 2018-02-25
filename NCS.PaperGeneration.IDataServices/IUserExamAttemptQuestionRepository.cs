@@ -8,8 +8,8 @@ using System.Threading.Tasks;
 
 namespace NCS.PaperGeneration.IDataServices
 {
-    public interface IUserExamAttemptRepository : IGenericRepository<UserExamAttempt>
+    public interface IUserExamAttemptQuestionRepository : IGenericRepository<UserExamAttemptQuestion>
     {
-        
+        void GetUserExamQuestions(int id);
     }
 }

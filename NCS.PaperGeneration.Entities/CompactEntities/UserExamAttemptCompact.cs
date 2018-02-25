@@ -9,5 +9,7 @@ namespace NCS.PaperGeneration.Entities.CompactEntities
 {
     public class UserExamAttemptCompact : AuditableEntity<int>
     {
+        public int ExamId { get; set; }
+        public int LoginUserId { get; set; }
     }
 }
