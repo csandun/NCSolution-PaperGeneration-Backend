@@ -8,5 +8,6 @@ namespace NCS.PaperGeneration.Entities.CompactEntities
 {
     public class ChoiceCompact
     {
+        public int QuestionId { get; set; }
     }
 }
