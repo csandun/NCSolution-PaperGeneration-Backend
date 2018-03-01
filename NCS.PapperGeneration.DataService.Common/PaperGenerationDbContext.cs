@@ -30,13 +30,15 @@ namespace NCS.PapperGeneration.DataService.Common
         public DbSet<UserExamAttempt> UserExamAttempts { get; set; }
         public DbSet<UserExamAttemptQuestion> UserExamAttemptQuestions { get; set; }
         public DbSet<Question> Questions { get; set; }
+        public DbSet<Choice> Choices { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Exam>().ToTable("Exam");
             modelBuilder.Entity<UserExamAttempt>().ToTable("UserExamAttempt");
             modelBuilder.Entity<UserExamAttemptQuestion>().ToTable("UserExamAttemptQuestion");                
-            modelBuilder.Entity<Question>().ToTable("Question");                
+            modelBuilder.Entity<Question>().ToTable("Question");
+            modelBuilder.Entity<Choice>().ToTable("Choice");
         }
     }
 }

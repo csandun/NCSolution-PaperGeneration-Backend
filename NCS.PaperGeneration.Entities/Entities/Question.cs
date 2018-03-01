@@ -12,6 +12,6 @@ namespace NCS.PaperGeneration.Entities.Entities
     {
         public string QuestionContent { get; set; }
         
-        //public virtual ICollection<Choice> Choices { get; set; }
+        public virtual ICollection<Choice> Choices { get; set; }
     }
 }

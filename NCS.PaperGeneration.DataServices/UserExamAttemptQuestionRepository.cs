@@ -22,26 +22,20 @@ namespace NCS.PaperGeneration.DataServices
 
         public List<UserExamAttemptQuestion> GetUserExamQuestions(int id)
         {
-            // var a = _context.Questions.Select(o => o);
-
-            //var examQuestions = _dbSet.Join(_context.Questions,
-            //                    userExam => userExam.QuestionId,
-            //                    question => question.Id,
-            //                    (userExam, question) =>
-            //                    new { UserExamAttemptQuestion = userExam, Question = question })
-            //                    .Where(o => o.UserExamAttemptQuestion.Id == id);
-
 
             var questions = _dbSet.Where(o => o.UserExamId == id).ToList<UserExamAttemptQuestion>();
 
+            var a = from userExam in _dbSet
+            join question in _context.Questions
+            on userExam.QuestionId equals question.Id
+            join choice in _context.Choices
+            on question.Id equals choice.QuestionId
+            where userExam.Id == id
+            select new { Exam = userExam, Question = question, Choices = choice};
+            
+           
+           
 
-
-            //var examQuestions = _dbSet.Where(o => o.UserExamId == id).ToList<UserExamAttemptQuestion>();
-            //examQuestions.Select(x =>
-            //{
-            //    x.Question = _context.Questions.FirstOrDefault(q => q.Id == x.QuestionId);
-            //    return x;
-            //});
 
             return questions;
         }

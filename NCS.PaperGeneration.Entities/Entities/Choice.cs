@@ -9,7 +9,6 @@ namespace NCS.PaperGeneration.Entities.Entities
 {
     public class Choice : ChoiceCompact
     {
-        public string ChoiceString { get; set; }        
-        //public virtual Question Question { get; set; }
+        public string ChoiceString { get; set; }                
     }
 }
