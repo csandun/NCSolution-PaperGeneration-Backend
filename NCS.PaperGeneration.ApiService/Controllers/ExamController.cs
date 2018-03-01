@@ -18,6 +18,11 @@ namespace NCS.PaperGeneration.ApiService.Controllers
             _examService = examService;
         }
 
+        /// <summary>
+        /// Get exam details using id
+        /// </summary>
+        /// <param name="id">The exam id.</param>
+        /// <returns>The Exam object.</returns>
         [Route("{id:int}")]
         public Exam GetById(int id)
         {
