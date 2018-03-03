@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="ExamService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserExamQuestionService.cs" />
     <Compile Include="UserExamService.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -75,11 +75,11 @@
     <Compile Include="Entities\Section.cs" />
     <Compile Include="Entities\UserExamAttempt.cs" />
     <Compile Include="Entities\UserExamAttemptQuestion.cs" />
-    <Compile Include="ExtendedEntities\UserExamAttemptQuestionExtended.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="CustomEntities\" />
+    <Folder Include="ExtendedEntities\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

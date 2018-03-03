@@ -25,24 +25,5 @@ namespace NCS.PaperGeneration.ApiService.Controllers
         {
             _userExamService = userExamService;
         }
-
-        /// <summary>
-        /// Get user exam attempt questions by id.
-        /// </summary>
-        /// <param name="id">The user exam id.</param>
-        /// <returns>Question list in the exam.</returns>
-        [HttpGet]
-        [Route("{id:int}/Questions")]
-        public List<UserExamAttemptQuestion> GetUserExamQuestions(int id)
-        {
-            try
-            {
-                return _userExamService.GetUserExamQuestions(id);
-            }
-            catch (Exception e)
-            {
-                throw e;
-            }
-        }
     }
 }

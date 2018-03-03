@@ -7,6 +7,8 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using NCS.PaperGeneration.Entities.CompactEntities;
+
 
 namespace NCS.PaperGeneration.DataServices
 {
@@ -23,15 +25,6 @@ namespace NCS.PaperGeneration.DataServices
         public List<UserExamAttemptQuestion> GetUserExamQuestions(int id)
         {
             var questions = _dbSet.Where(o => o.UserExamId == id).ToList<UserExamAttemptQuestion>();
-
-            //var a = from userExam in _dbSet
-            //join question in _context.Questions
-            //on userExam.QuestionId equals question.Id
-            //join choice in _context.Choices
-            //on question.Id equals choice.QuestionId
-            //where userExam.Id == id
-            //select new { Exam = userExam, Question = question, Choices = choice};
-
             return questions;
         }
     }

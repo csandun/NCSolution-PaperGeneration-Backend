@@ -63,6 +63,7 @@ namespace NCS.PapperGeneration.DataService.Common
         {
             this._dbSet.Attach(entityToUpdate);
             this.Context.Entry(entityToUpdate).State = EntityState.Modified;
+            this.Context.SaveChanges();
         }
 
        public IEnumerable<T> Get(Expression<Func<T, bool>> filter = null, Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null, string includeProperties = "")
