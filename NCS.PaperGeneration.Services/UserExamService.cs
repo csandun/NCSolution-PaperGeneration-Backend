@@ -22,9 +22,6 @@ namespace NCS.PaperGeneration.Services
             _userExamAttemptQuestionRepository = userExamAttemptQuestionRepository;
         }
 
-        public List<UserExamAttemptQuestion> GetUserExamQuestions(int userExamId)
-        {
-            return _userExamAttemptQuestionRepository.GetUserExamQuestions(userExamId);
-        }
+        
     }
 }
