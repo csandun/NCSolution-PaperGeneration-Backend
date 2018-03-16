@@ -51,11 +51,11 @@ namespace NCS.PaperGeneration.ApiService.Controllers
         /// <returns>Updated user exam question.</returns>
         [HttpPut]
         [Route("{id:int}")]
-        public void UpdateQuestionAnswer(UserExamAttemptQuestion questionCompact)
+        public void UpdateQuestionAnswer(int examId, int questionId, int answer)
         {
             try
             {
-                _userExamQuestionService.Update(questionCompact);
+                _userExamQuestionService.SaveUserAnswer(examId, questionId, answer);
             }
             catch (Exception e)
             {                 
