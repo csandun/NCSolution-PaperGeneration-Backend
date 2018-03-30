@@ -12,6 +12,7 @@ namespace NCS.PaperGeneration.IDataServices
 {
     public interface IUserExamAttemptQuestionRepository : IGenericRepository<UserExamAttemptQuestion>
     {
-        List<UserExamAttemptQuestion> GetUserExamQuestions(int id);        
+        List<UserExamAttemptQuestion> GetUserExamQuestions(int id);
+        void SaveUserAnswer(int examId, int questionId, int answer);
     }
 }

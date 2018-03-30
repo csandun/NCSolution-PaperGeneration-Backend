@@ -28,6 +28,11 @@ namespace NCS.PaperGeneration.Services
             return _userExamAttemptQuestionRepository.GetUserExamQuestions(userExamId);
         }
 
-      
+        public void SaveUserAnswer(int examId, int questionId, int answer)
+        {
+            _userExamAttemptQuestionRepository.SaveUserAnswer(examId, questionId, answer);
+        }
+
+
     }
 }
