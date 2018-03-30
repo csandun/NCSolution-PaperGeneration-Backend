@@ -9,6 +9,9 @@ using System.Web.Http;
 
 namespace NCS.PaperGeneration.ApiService.Controllers
 {
+    /// <summary>
+    /// Define Chapter Repository
+    /// </summary>
     [RoutePrefix("api/Chapter")]
     public class ChapterController : ApiController
     {
@@ -50,19 +53,21 @@ namespace NCS.PaperGeneration.ApiService.Controllers
         /// <param name="chapter"></param>
         /// <returns></returns>
         [HttpPut]
-        public Chapter UpdateChapter(Chapter chapter)
+        public void UpdateChapter(Chapter chapter)
         {
-            _chapterService.Update(chapter);
-            return _chapterService.GetById(chapter.Id);
+            _chapterService.Update(chapter);            
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="chapter"></param>
         [HttpPost]
         public void AddChapter(Chapter chapter)
         {
             try
             {
                 _chapterService.Insert(chapter);
-                
             }
             catch (Exception)
             {
