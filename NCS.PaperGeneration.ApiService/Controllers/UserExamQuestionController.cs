@@ -8,10 +8,10 @@ using System.Web.Http;
 
 namespace NCS.PaperGeneration.ApiService.Controllers
 {
-    [RoutePrefix("api/UserExamQuestions")]
     /// <summary>
     /// user exam attempt question controller
     /// </summary>
+    [RoutePrefix("api/UserExamQuestion")]
     public class UserExamQuestionController : ApiController
     {
 

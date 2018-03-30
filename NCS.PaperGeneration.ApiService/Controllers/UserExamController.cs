@@ -12,7 +12,7 @@ namespace NCS.PaperGeneration.ApiService.Controllers
     /// <summary>
     /// User exam attempt questions.
     /// </summary>
-    [RoutePrefix("api/UserExams")]
+    [RoutePrefix("api/UserExam")]
     public class UserExamController : ApiController
     {
         private readonly IUserExamService _userExamService;

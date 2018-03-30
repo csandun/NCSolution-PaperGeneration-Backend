@@ -26,8 +26,7 @@ namespace NCS.PaperGeneration.ApiService.Controllers
         /// Get All Chapters as a List
         /// </summary>
         /// <returns></returns>
-        [HttpGet]
-        [Route("Chapters")]
+        [HttpGet]        
         public List<Chapter> GetChapters()
         {
             return _chapterService.Get().ToList<Chapter>();
@@ -58,11 +57,19 @@ namespace NCS.PaperGeneration.ApiService.Controllers
         }
 
         [HttpPost]
-        public Chapter AddChapter(Chapter chapter)
+        public void AddChapter(Chapter chapter)
         {
-            _chapterService.Insert(chapter);
-            return _chapterService.Get().Last();
-        }
+            try
+            {
+                _chapterService.Insert(chapter);
+                
+            }
+            catch (Exception)
+            {
 
+                throw;
+            }
+            
+        }
     }
 }
