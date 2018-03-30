@@ -27,5 +27,12 @@ namespace NCS.PaperGeneration.DataServices
             var questions = _dbSet.Where(o => o.UserExamId == id).ToList<UserExamAttemptQuestion>();
             return questions;
         }
+
+        public void SaveUserAnswer(int examId, int questionId, int answer)
+        {
+            var ss = _dbSet.Where(o => o.UserExamId == examId && o.QuestionId == examId).FirstOrDefault();
+            ss.ChoiceId = answer;
+            Update(ss);
+        }
     }
 }

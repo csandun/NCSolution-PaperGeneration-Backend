@@ -41,6 +41,8 @@ namespace NCS.PapperGeneration.DataService.Common
         public virtual void Insert(T entity)
         {
             this._dbSet.Add(entity);
+            this.Context.Entry(entity).State = EntityState.Added;
+            this.Context.SaveChanges();
         }
 
        public virtual void Delete(object id)

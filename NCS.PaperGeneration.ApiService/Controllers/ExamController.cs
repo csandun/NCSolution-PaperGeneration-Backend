@@ -9,7 +9,7 @@ using NCS.PaperGeneration.IServices;
 
 namespace NCS.PaperGeneration.ApiService.Controllers
 {
-    [RoutePrefix("api/exams")]
+    [RoutePrefix("api/exam")]
     public class ExamController : ApiController
     {
         private readonly IExamService _examService;

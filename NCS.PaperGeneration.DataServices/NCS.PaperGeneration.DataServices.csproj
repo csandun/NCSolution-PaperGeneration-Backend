@@ -47,8 +47,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChapterRepository.cs" />
     <Compile Include="ExamRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SectionRepository.cs" />
     <Compile Include="UserExamAttemptQuestionRepository.cs" />
     <Compile Include="UserExamAttemptRepository.cs" />
   </ItemGroup>

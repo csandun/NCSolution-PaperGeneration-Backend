@@ -206,8 +206,10 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\ChapterController.cs" />
     <Compile Include="Controllers\ExamController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\SectionController.cs" />
     <Compile Include="Controllers\UserExamController.cs" />
     <Compile Include="Controllers\UserExamQuestionController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
@@ -298,9 +300,17 @@
       <Project>{615C0DF5-15A6-46A5-9BE2-714D92733939}</Project>
       <Name>NCS.PaperGeneration.Entities</Name>
     </ProjectReference>
+    <ProjectReference Include="..\NCS.PaperGeneration.IDataServices\NCS.PaperGeneration.IDataServices.csproj">
+      <Project>{0C9EF44D-72C2-4BDF-9588-674C2773537A}</Project>
+      <Name>NCS.PaperGeneration.IDataServices</Name>
+    </ProjectReference>
     <ProjectReference Include="..\NCS.PaperGeneration.IServices\NCS.PaperGeneration.IServices.csproj">
       <Project>{2B725609-B7C5-4068-B662-459E87BA1CF9}</Project>
       <Name>NCS.PaperGeneration.IServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NCS.PapperGeneration.DataService.Common\NCS.PapperGeneration.DataService.Common.csproj">
+      <Project>{99669887-D976-43F9-B759-EE8993C7E3F6}</Project>
+      <Name>NCS.PapperGeneration.DataService.Common</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

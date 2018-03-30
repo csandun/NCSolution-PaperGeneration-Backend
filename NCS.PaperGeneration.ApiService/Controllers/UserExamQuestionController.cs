@@ -8,10 +8,10 @@ using System.Web.Http;
 
 namespace NCS.PaperGeneration.ApiService.Controllers
 {
-    [RoutePrefix("api/UserExamQuestions")]
     /// <summary>
     /// user exam attempt question controller
     /// </summary>
+    [RoutePrefix("api/UserExamQuestion")]
     public class UserExamQuestionController : ApiController
     {
 
@@ -50,12 +50,11 @@ namespace NCS.PaperGeneration.ApiService.Controllers
         /// </summary>
         /// <returns>Updated user exam question.</returns>
         [HttpPut]
-        [Route("{id:int}")]
-        public void UpdateQuestionAnswer(UserExamAttemptQuestion questionCompact)
+        public void UpdateQuestionAnswer(QuestionAnswer Answer)
         {
             try
             {
-                _userExamQuestionService.Update(questionCompact);
+                _userExamQuestionService.SaveUserAnswer(Answer.ExamId, Answer.QuestionId, Answer.AnswerId);
             }
             catch (Exception e)
             {                 
