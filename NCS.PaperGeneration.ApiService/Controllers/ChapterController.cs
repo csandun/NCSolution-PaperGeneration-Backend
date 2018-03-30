@@ -1,20 +1,31 @@
-﻿using NCS.PaperGeneration.Entities.Entities;
-using NCS.PaperGeneration.IDataServices;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Web.Http;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="ChapterController.cs" company="">
+//   
+// </copyright>
+// <summary>
+//   Define Chapter Repos    itory
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
 
 namespace NCS.PaperGeneration.ApiService.Controllers
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Web.Http;
+
+    using NCS.PaperGeneration.Entities.Entities;
+    using NCS.PaperGeneration.IDataServices;
+
     /// <summary>
-    /// Define Chapter Repository
+    /// Define Chapter Repos    itory
     /// </summary>
     [RoutePrefix("api/Chapter")]
     public class ChapterController : ApiController
     {
+        /// <summary>
+        /// The _chapter service.
+        /// </summary>
         private readonly IChapterRepository _chapterService;
 
         /// <summary>
