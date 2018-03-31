@@ -17,7 +17,7 @@ namespace NCS.PaperGeneration.ApiService.Controllers
     using System.Web.Http;
 
     using NCS.PaperGeneration.Entities.Entities;
-    using NCS.PaperGeneration.IDataServices;
+    using NCS.PaperGeneration.IServices;
 
     /// <summary>
     /// Defines SectionController
@@ -50,7 +50,7 @@ namespace NCS.PaperGeneration.ApiService.Controllers
         [Route("Sections")]
         public List<Section> GetSectionList()
         {
-            return this.sectionService.Get().ToList<Section>();
+            return this.sectionService.Get();
         }
 
         /// <summary>
@@ -73,8 +73,8 @@ namespace NCS.PaperGeneration.ApiService.Controllers
         [HttpPut]
         public Section UpdateSection(Section section)
         {
-            this.sectionService.Update(section);
-            return this.sectionService.GetById(section.Id);
+            return this.sectionService.Update(section);
+            //// return this.sectionService.GetById(section.Id);
         }
 
         /// <summary>
@@ -84,7 +84,7 @@ namespace NCS.PaperGeneration.ApiService.Controllers
         [HttpPost]
         public void AddSection(Section section)
         {
-            this.sectionService.Insert(section);
+            this.sectionService.Create(section);
         }
     }
 }

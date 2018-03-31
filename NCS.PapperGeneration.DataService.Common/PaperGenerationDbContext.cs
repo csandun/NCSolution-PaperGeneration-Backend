@@ -31,8 +31,8 @@ namespace NCS.PapperGeneration.DataService.Common
         public DbSet<UserExamAttemptQuestion> UserExamAttemptQuestions { get; set; }
         public DbSet<Question> Questions { get; set; }
         public DbSet<Choice> Choices { get; set; }
-        public DbSet<Chapter> Chapter { get; set; }
-        public DbSet<Section> Section { get; set; }
+        public DbSet<Chapter> Chapters { get; set; }
+        public DbSet<Section> Sections { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -42,7 +42,7 @@ namespace NCS.PapperGeneration.DataService.Common
             modelBuilder.Entity<Question>().ToTable("Question");
             modelBuilder.Entity<Choice>().ToTable("Choice");
             modelBuilder.Entity<Chapter>().ToTable("Chapter");
-            modelBuilder.Entity<Section>().ToTable("Section");
+            modelBuilder.Entity<Section>().ToTable("Sections");
         }
     }
 }
