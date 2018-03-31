@@ -31,11 +31,12 @@ namespace NCS.PaperGeneration.BussinessService.Common
             _unitOfWork.Save();
         }
 
-        public virtual void Update(T entity)
+        public virtual T Update(T entity)
         {
             if (entity == null) throw new ArgumentNullException("entity");
-            _repository.Update(entity);
+            T updatedEntity = _repository.Update(entity);
             _unitOfWork.Save();
+            return updatedEntity;
         }
 
         public virtual void Delete(T entity)
@@ -48,7 +49,11 @@ namespace NCS.PaperGeneration.BussinessService.Common
         public T GetById(int id)
         {
             return _repository.GetById(id);
-            _unitOfWork.Save();
+        }
+
+        public virtual List<T> Get()
+        {
+            return this._repository.Get().ToList<T>();
         }
     }
 }

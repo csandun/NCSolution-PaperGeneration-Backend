@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace NCS.PaperGeneration.IDataServices
 {
-    public interface ISectionService : IGenericRepository<Section>
+    public interface ISectionRepository : IGenericRepository<Section>
     {
     }
 }

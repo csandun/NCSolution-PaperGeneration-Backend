@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace NCS.PaperGeneration.IServices
 {
-    public interface ISectionService
+    using NCS.PaperGeneration.BussinessService.Common;
+    using NCS.PaperGeneration.Entities.Entities;
+
+    public interface ISectionService : IEntityService<Section>
     {
     }
 }

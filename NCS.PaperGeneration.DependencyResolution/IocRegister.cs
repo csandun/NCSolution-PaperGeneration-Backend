@@ -30,7 +30,7 @@ namespace NCS.PaperGeneration.DependencyResolution
             container.RegisterType(typeof(IUserExamService), typeof(UserExamService));            
             container.RegisterType(typeof(IUserExamQuestionService), typeof(UserExamQuestionService));            
             container.RegisterType(typeof(IChapterService), typeof(ChapterService));
-            container.RegisterType(typeof(IServices.ISectionService), typeof(SectionService));
+            container.RegisterType(typeof(ISectionService), typeof(SectionService));
         }
 
         private static void RegisterDataServices(IUnityContainer container)
@@ -42,7 +42,7 @@ namespace NCS.PaperGeneration.DependencyResolution
             container.RegisterType(typeof(IUserExamAttemptRepository), typeof(UserExamAttemptRepository));
             container.RegisterType(typeof(IUserExamAttemptQuestionRepository), typeof(UserExamAttemptQuestionRepository));
             container.RegisterType(typeof(IChapterRepository), typeof(ChapterRepository));
-            container.RegisterType(typeof(IDataServices.ISectionService), typeof(SectionRepository));
+            container.RegisterType(typeof(ISectionRepository), typeof(SectionRepository));
         }
     }
 }
