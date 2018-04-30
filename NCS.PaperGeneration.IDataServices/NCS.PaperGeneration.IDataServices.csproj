@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IAlgorithmRepository.cs" />
     <Compile Include="IChapterRepository.cs" />
     <Compile Include="IExamRepository.cs" />
     <Compile Include="ISectionRepository.cs" />
