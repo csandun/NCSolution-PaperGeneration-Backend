@@ -48,6 +48,7 @@
     <Compile Include="SectionService.cs" />
     <Compile Include="UserExamQuestionService.cs" />
     <Compile Include="UserExamService.cs" />
+    <Compile Include="UserService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NCS.PaperGeneration.BussinessService.Common\NCS.PaperGeneration.BussinessService.Common.csproj">

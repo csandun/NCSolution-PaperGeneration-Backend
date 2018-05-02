@@ -18,7 +18,7 @@ namespace NCS.PaperGeneration.ApiService.Controllers
     using NCS.PaperGeneration.IDataServices;
 
     /// <summary>
-    /// Define Chapter Repos    itory
+    /// Define Chapter Repository
     /// </summary>
     [RoutePrefix("api/Chapter")]
     public class ChapterController : ApiController

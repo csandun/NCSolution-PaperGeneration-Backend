@@ -63,6 +63,7 @@
     <Compile Include="CompactEntities\QuestionCompact.cs" />
     <Compile Include="CompactEntities\SavedPaperCompact.cs" />
     <Compile Include="CompactEntities\SectionCompact.cs" />
+    <Compile Include="CompactEntities\UserCompact.cs" />
     <Compile Include="CompactEntities\UserExamAttemptCompact.cs" />
     <Compile Include="CompactEntities\UserExamAttemptQuestionCompact.cs" />
     <Compile Include="Entities\Algorithms.cs" />
@@ -74,6 +75,7 @@
     <Compile Include="Entities\Question.cs" />
     <Compile Include="Entities\SavedPaper.cs" />
     <Compile Include="Entities\Section.cs" />
+    <Compile Include="Entities\LoginUser.cs" />
     <Compile Include="Entities\UserExamAttempt.cs" />
     <Compile Include="Entities\UserExamAttemptQuestion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
