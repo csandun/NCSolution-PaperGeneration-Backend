@@ -47,7 +47,8 @@ namespace NCS.PaperGeneration.ApiService.Controllers
         [HttpGet]        
         public List<Chapter> GetChapters()
         {
-            return this.chapterService.Get().ToList<Chapter>();
+            var a = this.chapterService.Get().ToList<Chapter>();
+            return a;
         }
 
         /// <summary>
