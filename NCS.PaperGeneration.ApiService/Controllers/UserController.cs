@@ -10,6 +10,9 @@ namespace NCS.PaperGeneration.ApiService.Controllers
 {
     using System;
     using System.Collections.Generic;
+    using System.Net.Http;
+    using System.Text;
+    using System.Web;
     using System.Web.Http;
 
     using NCS.PaperGeneration.Entities.Entities;
@@ -99,6 +102,51 @@ namespace NCS.PaperGeneration.ApiService.Controllers
             try
             {
                 return this.userService.GetById(id);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        /// <summary>
+        /// login user
+        /// </summary>
+        /// <param name="user">user object</param>
+        /// <returns>http response</returns>
+        [HttpPost]
+        [Route("Login")]
+        public async System.Threading.Tasks.Task<HttpResponseMessage> LoginAsync(LoginUser user)
+        {
+            try
+            {
+                LoginUser loginUser = this.userService.ValideUser(user);
+
+                if (loginUser != null)
+                {
+                    var request = HttpContext.Current.Request;
+                    var tokenServiceUrl = request.Url.GetLeftPart(UriPartial.Authority) + request.ApplicationPath + "/token";
+                    using (var client = new HttpClient())
+                    {
+                        var requestParams = new List<KeyValuePair<string, string>>
+                        {
+                            new KeyValuePair<string, string>("grant_type", "password"),
+                            new KeyValuePair<string, string>("username", user.LoginUserName),
+                            new KeyValuePair<string, string>("password", user.Password)
+                        };
+                        var requestParamsFormUrlEncoded = new FormUrlEncodedContent(requestParams);
+                        var tokenServiceResponse = await client.PostAsync(tokenServiceUrl, requestParamsFormUrlEncoded);
+                        var responseString = await tokenServiceResponse.Content.ReadAsStringAsync();
+                        var responseCode = tokenServiceResponse.StatusCode;
+                        var responseMsg = new HttpResponseMessage(responseCode)
+                        {
+                            Content = new StringContent(responseString, Encoding.UTF8, "application/json")
+                        };
+                        return responseMsg;
+                    }
+                }
+
+                return new HttpResponseMessage();
             }
             catch (Exception)
             {

@@ -10,5 +10,6 @@ namespace NCS.PaperGeneration.IDataServices
 {
     public interface IUserRepository : IGenericRepository<LoginUser>
     {
+        LoginUser ValideUser(LoginUser user);
     }
 }

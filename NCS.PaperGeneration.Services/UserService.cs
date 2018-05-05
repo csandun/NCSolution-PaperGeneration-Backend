@@ -21,5 +21,19 @@ namespace NCS.PaperGeneration.Services
             this._unitOfWork = unitOfWork;
             this._userRepository = repository;
         }
+
+        public LoginUser ValideUser(LoginUser user)
+        {
+            LoginUser n = null;
+            try
+            {
+                n = _userRepository.ValideUser(user);
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            return n;
+        }
     }
 }

@@ -44,6 +44,7 @@ namespace NCS.PaperGeneration.ApiService.Controllers
         /// Get All Chapters as a List
         /// </summary>
         /// <returns>Returns chapter list</returns>
+        [Authorize(Roles = "admin")]
         [HttpGet]        
         public List<Chapter> GetChapters()
         {

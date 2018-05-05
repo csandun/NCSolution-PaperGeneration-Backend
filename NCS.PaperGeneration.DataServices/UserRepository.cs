@@ -17,5 +17,19 @@ namespace NCS.PaperGeneration.DataServices
         {
             this._context = context;
         }
+
+        public LoginUser ValideUser(LoginUser user)
+        {
+            LoginUser n = null;
+            try
+            {
+                n = _dbSet.Where(u => u.LoginUserName.Equals(user.LoginUserName) && u.Password.Equals(user.Password)).FirstOrDefault();
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            return n;
+        }
     }
 }

@@ -10,5 +10,6 @@ namespace NCS.PaperGeneration.IServices
 {
     public interface IUserService : IEntityService<LoginUser>
     {
+        LoginUser ValideUser(LoginUser user);
     }
 }
