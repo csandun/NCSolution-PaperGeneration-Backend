@@ -20,7 +20,7 @@ namespace NCS.PaperGeneration.ApiService
     using Unity;
 
     /// <summary>
-    /// Defines the WebApiConfig
+    /// Defines the Config
     /// </summary>
     public static class WebApiConfig
     {

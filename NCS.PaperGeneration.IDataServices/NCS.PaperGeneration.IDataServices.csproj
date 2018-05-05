@@ -47,6 +47,7 @@
     <Compile Include="ISectionRepository.cs" />
     <Compile Include="IUserExamAttemptQuestionRepository.cs" />
     <Compile Include="IUserExamAttemptRepository.cs" />
+    <Compile Include="IUserRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

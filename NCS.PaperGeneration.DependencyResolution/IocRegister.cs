@@ -32,6 +32,7 @@ namespace NCS.PaperGeneration.DependencyResolution
             container.RegisterType(typeof(IChapterService), typeof(ChapterService));
             container.RegisterType(typeof(ISectionService), typeof(SectionService));
             container.RegisterType(typeof(IAlgorithmService), typeof(AlgorithmService));
+            container.RegisterType(typeof(IUserService), typeof(UserService));
         }
 
         private static void RegisterDataServices(IUnityContainer container)
@@ -45,6 +46,7 @@ namespace NCS.PaperGeneration.DependencyResolution
             container.RegisterType(typeof(IChapterRepository), typeof(ChapterRepository));
             container.RegisterType(typeof(ISectionRepository), typeof(SectionRepository));
             container.RegisterType(typeof(IAlgorithmRepository), typeof(AlgorithmRepository));
+            container.RegisterType(typeof(IUserRepository), typeof(UserRepository));
         }
     }
 }

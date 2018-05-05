@@ -40,7 +40,7 @@ namespace NCS.PaperGeneration.ApiService.Controllers
         }
 
         /// <summary>
-        /// Get algorithm details using id
+        /// Get algorithm details
         /// </summary>
         /// <returns>The algorithm list.</returns>
         [HttpGet]

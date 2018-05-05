@@ -18,7 +18,6 @@ namespace NCS.PaperGeneration.ApiService
     {
         /// <summary>
         /// The register bundles.
-        /// For more information on bundling, visit https://go.microsoft.com/fwlink/?LinkId=301862
         /// </summary>
         /// <param name="bundles">
         /// The bundles.

@@ -55,6 +55,7 @@
     <Compile Include="SectionRepository.cs" />
     <Compile Include="UserExamAttemptQuestionRepository.cs" />
     <Compile Include="UserExamAttemptRepository.cs" />
+    <Compile Include="UserRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NCS.PaperGeneration.Entities\NCS.PaperGeneration.Entities.csproj">

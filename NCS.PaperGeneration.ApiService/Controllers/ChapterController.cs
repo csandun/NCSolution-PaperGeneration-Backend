@@ -18,7 +18,7 @@ namespace NCS.PaperGeneration.ApiService.Controllers
     using NCS.PaperGeneration.IDataServices;
 
     /// <summary>
-    /// Define Chapter Repos    itory
+    /// Define Chapter Repository
     /// </summary>
     [RoutePrefix("api/Chapter")]
     public class ChapterController : ApiController
@@ -44,6 +44,7 @@ namespace NCS.PaperGeneration.ApiService.Controllers
         /// Get All Chapters as a List
         /// </summary>
         /// <returns>Returns chapter list</returns>
+        [Authorize(Roles = "admin")]
         [HttpGet]        
         public List<Chapter> GetChapters()
         {

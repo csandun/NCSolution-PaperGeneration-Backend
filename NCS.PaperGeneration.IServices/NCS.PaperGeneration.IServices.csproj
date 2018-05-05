@@ -47,6 +47,7 @@
     <Compile Include="ISectionService.cs" />
     <Compile Include="IUserExamQuestionService.cs" />
     <Compile Include="IUserExamService.cs" />
+    <Compile Include="IUserService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
