@@ -60,5 +60,70 @@ namespace NCS.PaperGeneration.ApiService.Controllers
 
             return algorithms;
         }
+
+        /// <summary>
+        /// Get algorithm using id
+        /// </summary>
+        /// <param name="id">The algorithm id</param>
+        /// <returns>Returns algorithm</returns>
+        [HttpGet]
+        [Route("{id:int}")]
+        public Algorithms Get(int id)
+        {
+            Algorithms algorithm = null;
+            try
+            {
+                algorithm = this.algorithmService.GetById(id);
+            }
+            catch (Exception e)
+            {
+                Debug.Print(e.Message);
+                throw e;
+            }
+
+            return algorithm;
+        }
+
+        /// <summary>
+        /// Create new algorithm
+        /// </summary>
+        /// <param name="algorithms">The algorithm</param>
+        [HttpPost]
+        [Route("")]
+        public void Post([FromBody] Algorithms algorithms)
+        {            
+            try
+            {
+                algorithms.CreatedDate = DateTime.Now;
+                algorithms.CreatedBy = 1;
+                this.algorithmService.Create(algorithms);
+            }
+            catch (Exception e)
+            {
+                Debug.Print(e.Message);
+                throw e;
+            }            
+        }
+
+        /// <summary>
+        /// Create new algorithm
+        /// </summary>
+        /// <param name="algorithms">The algorithm</param>
+        [HttpPut]
+        [Route("")]
+        public void Put([FromBody] Algorithms algorithms)
+        {
+            try
+            {
+                algorithms.CreatedDate = DateTime.Now;
+                algorithms.CreatedBy = 1;
+                this.algorithmService.Update(algorithms);
+            }
+            catch (Exception e)
+            {
+                Debug.Print(e.Message);
+                throw e;
+            }
+        }
     }
 }
