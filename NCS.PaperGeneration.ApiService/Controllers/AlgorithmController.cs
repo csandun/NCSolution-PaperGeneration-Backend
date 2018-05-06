@@ -106,7 +106,7 @@ namespace NCS.PaperGeneration.ApiService.Controllers
         }
 
         /// <summary>
-        /// Create new algorithm
+        /// update new algorithm
         /// </summary>
         /// <param name="algorithms">The algorithm</param>
         [HttpPut]
