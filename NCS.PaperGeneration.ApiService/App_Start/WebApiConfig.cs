@@ -1,21 +1,41 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web.Http;
-using NCS.PaperGeneration.DependencyResolution;
-using Unity;
-using System.Web.Http.Cors;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="WebApiConfig.cs" company="dd">
+//   copyright
+// </copyright>
+// <summary>
+//   Defines the WebApiConfig type.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
 
 namespace NCS.PaperGeneration.ApiService
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Web.Http;
+    using System.Web.Http.Cors;
+
+    using NCS.PaperGeneration.DependencyResolution;
+
+    using Unity;
+
+    /// <summary>
+    /// Defines the Config
+    /// </summary>
     public static class WebApiConfig
     {
+        /// <summary>
+        /// The register.
+        /// </summary>
+        /// <param name="config">
+        /// The config.
+        /// </param>
         public static void Register(HttpConfiguration config)
         {
             // Web API configuration and services
 
             // Enable cors
-            var cors = new EnableCorsAttribute("*","*","*");
+            var cors = new EnableCorsAttribute("*", "*", "*");
             config.EnableCors(cors);
 
             // Web API routes
@@ -28,8 +48,11 @@ namespace NCS.PaperGeneration.ApiService
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",
-                defaults: new { id = RouteParameter.Optional }
-            );
+                defaults: new { id = RouteParameter.Optional });
+
+            config.Formatters.JsonFormatter
+            .SerializerSettings
+            .ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
         }
     }
 }

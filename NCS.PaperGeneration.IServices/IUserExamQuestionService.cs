@@ -9,8 +9,9 @@ using NCS.PaperGeneration.Entities.CompactEntities;
 
 namespace NCS.PaperGeneration.IServices
 {
-    public interface IUserExamQuestionService : IEntityService<UserExamAttemptQuestion>
+    public interface IUserExamQuestionService
     {
-        List<UserExamAttemptQuestion> GetUserExamQuestions(int userExamId);        
+        List<UserExamAttemptQuestion> GetUserExamQuestions(int userExamId);
+        void SaveUserAnswer(int examId, int questionId, int answer);
     }
 }

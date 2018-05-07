@@ -12,8 +12,6 @@ namespace NCS.PaperGeneration.Entities.CompactEntities
     public class UserExamAttemptQuestionCompact : AuditableEntity<int>
     {
         public int UserExamId { get; set; }
-
-        [ForeignKey("Question")]
         public int QuestionId { get; set; }
         public int? ChoiceId { get; set; }
     }

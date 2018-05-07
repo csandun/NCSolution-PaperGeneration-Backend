@@ -12,4 +12,11 @@ namespace NCS.PaperGeneration.Entities.Entities
         public bool IsAnswered { get; set; }
         public virtual Question Question { get; set; }
     }
+
+    public class QuestionAnswer
+    {
+        public int ExamId { get; set; }
+        public int QuestionId { get; set; }
+        public int AnswerId { get; set; }
+    }
 }

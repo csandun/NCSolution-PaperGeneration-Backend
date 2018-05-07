@@ -41,6 +41,8 @@ namespace NCS.PapperGeneration.DataService.Common
         public virtual void Insert(T entity)
         {
             this._dbSet.Add(entity);
+            this.Context.Entry(entity).State = EntityState.Added;
+            this.Context.SaveChanges();
         }
 
        public virtual void Delete(object id)
@@ -59,11 +61,12 @@ namespace NCS.PapperGeneration.DataService.Common
             this._dbSet.Remove(entityToDelete);
         }
 
-       public virtual void Update(T entityToUpdate)
+       public virtual T Update(T entityToUpdate)
         {
             this._dbSet.Attach(entityToUpdate);
             this.Context.Entry(entityToUpdate).State = EntityState.Modified;
             this.Context.SaveChanges();
+            return entityToUpdate;
         }
 
        public IEnumerable<T> Get(Expression<Func<T, bool>> filter = null, Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null, string includeProperties = "")

@@ -1,29 +1,37 @@
-﻿using NCS.PaperGeneration.Entities.Entities;
-using NCS.PaperGeneration.IServices;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Web.Http;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="UserExamController.cs" company="NCSolution">
+//   Copyright 2018
+// </copyright>
+// <summary>
+//   User exam attempt questions.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
 
 namespace NCS.PaperGeneration.ApiService.Controllers
 {
+    using System.Web.Http;
+    using NCS.PaperGeneration.IServices;
+
     /// <summary>
     /// User exam attempt questions.
     /// </summary>
-    [RoutePrefix("api/UserExams")]
+    [RoutePrefix("api/UserExam")]
     public class UserExamController : ApiController
     {
-        private readonly IUserExamService _userExamService;
+        /// <summary>
+        /// The user exam service.
+        /// </summary>
+        private readonly IUserExamService userExamService;
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="UserExamController"/> class. 
         /// User exam attempt questions.
         /// </summary>
-        /// <param name="userExamService"></param>
+        /// <param name="userExamService">The userExamService
+        /// </param>
         public UserExamController(IUserExamService userExamService)
         {
-            _userExamService = userExamService;
+            this.userExamService = userExamService;
         }
     }
 }

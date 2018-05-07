@@ -1,30 +1,44 @@
-﻿
-using NCS.PaperGeneration.Entities.CompactEntities;
-using NCS.PaperGeneration.Entities.Entities;
-using NCS.PaperGeneration.IServices;
-using System;
-using System.Collections.Generic;
-using System.Web.Http;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="UserExamQuestionController.cs" company="NCSolution">
+//   Copyright 2018 
+// </copyright>
+// <summary>
+//   user exam attempt question controller
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
 
 namespace NCS.PaperGeneration.ApiService.Controllers
 {
-    [RoutePrefix("api/UserExamQuestions")]
+    using System;
+    using System.Collections.Generic;
+    using System.Web.Http;
+
+    using NCS.PaperGeneration.Entities.CompactEntities;
+    using NCS.PaperGeneration.Entities.Entities;
+    using NCS.PaperGeneration.IServices;
+
     /// <summary>
     /// user exam attempt question controller
     /// </summary>
+    [RoutePrefix("api/UserExamQuestion")]
     public class UserExamQuestionController : ApiController
     {
-
-        private readonly IUserExamQuestionService _userExamQuestionService;
+        /// <summary>
+        /// The user exam question service.
+        /// </summary>
+        private readonly IUserExamQuestionService userExamQuestionService;
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="UserExamQuestionController"/> class. 
         /// user exam questions controller.
         /// </summary>
+        /// <param name="userExamQuestionService">
+        /// The user Exam Question Service.
+        /// </param>
         public UserExamQuestionController(IUserExamQuestionService userExamQuestionService)
         {
-            this._userExamQuestionService = userExamQuestionService;
+            this.userExamQuestionService = userExamQuestionService;
         }
-
 
         /// <summary>
         /// Get user exam attempt questions by id.
@@ -37,7 +51,7 @@ namespace NCS.PaperGeneration.ApiService.Controllers
         {
             try
             {
-                return _userExamQuestionService.GetUserExamQuestions(id);
+                return this.userExamQuestionService.GetUserExamQuestions(id);
             }
             catch (Exception e)
             {
@@ -48,21 +62,20 @@ namespace NCS.PaperGeneration.ApiService.Controllers
         /// <summary>
         /// Update the answer of the question
         /// </summary>
-        /// <returns>Updated user exam question.</returns>
+        /// <param name="answer">
+        /// The Answer.
+        /// </param>
         [HttpPut]
-        [Route("{id:int}")]
-        public void UpdateQuestionAnswer(UserExamAttemptQuestion questionCompact)
+        public void UpdateQuestionAnswer(QuestionAnswer answer)
         {
             try
             {
-                _userExamQuestionService.Update(questionCompact);
+                this.userExamQuestionService.SaveUserAnswer(answer.ExamId, answer.QuestionId, answer.AnswerId);
             }
             catch (Exception e)
             {                 
                 throw e;
             }
         }
-
-
     }
 }

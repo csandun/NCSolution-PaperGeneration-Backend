@@ -1,11 +1,27 @@
-﻿using System.Web;
-using System.Web.Optimization;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="BundleConfig.cs" company="NCSolution">
+//   Copy right
+// </copyright>
+// <summary>
+//   Defines the BundleConfig type.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
 
 namespace NCS.PaperGeneration.ApiService
 {
+    using System.Web.Optimization;
+
+    /// <summary>
+    /// Defines BundleConfig
+    /// </summary>
     public class BundleConfig
     {
-        // For more information on bundling, visit https://go.microsoft.com/fwlink/?LinkId=301862
+        /// <summary>
+        /// The register bundles.
+        /// </summary>
+        /// <param name="bundles">
+        /// The bundles.
+        /// </param>
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(

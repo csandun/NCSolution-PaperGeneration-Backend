@@ -87,6 +87,6 @@ namespace NCS.PapperGeneration.DataService.Common
         /// <param name="entityToUpdate">
         /// The entity to update.
         /// </param>
-        void Update(T entityToUpdate);
+        T Update(T entityToUpdate);
     }
 }
