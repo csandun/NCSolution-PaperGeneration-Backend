@@ -16,8 +16,8 @@ namespace NCS.PaperGeneration.Entities.Entities
             this.Sections = new HashSet<Section>();
         }
 
-        public string ChapterName { get; set; }
-        public string ChapterDescription { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
         
         public virtual  ICollection<Section> Sections { get; set; }
     }

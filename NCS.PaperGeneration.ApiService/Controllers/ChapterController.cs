@@ -11,22 +11,24 @@ namespace NCS.PaperGeneration.ApiService.Controllers
 {
     using System;
     using System.Collections.Generic;
+    using System.Diagnostics;
     using System.Linq;
     using System.Web.Http;
 
     using NCS.PaperGeneration.Entities.Entities;
     using NCS.PaperGeneration.IDataServices;
+    using NCS.PaperGeneration.IServices;
 
     /// <summary>
     /// Define Chapter Repository
     /// </summary>
-    [RoutePrefix("api/Chapter")]
+    [RoutePrefix("api/Chapters")]
     public class ChapterController : ApiController
     {
         /// <summary>
         /// The _chapter service.
         /// </summary>
-        private readonly IChapterRepository chapterService;
+        private readonly IChapterService chapterService;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ChapterController"/> class. 
@@ -35,59 +37,95 @@ namespace NCS.PaperGeneration.ApiService.Controllers
         /// <param name="chapterService">
         /// The chapter Service.
         /// </param>
-        public ChapterController(IChapterRepository chapterService)
+        public ChapterController(IChapterService chapterService)
         {
             this.chapterService = chapterService;
         }
 
         /// <summary>
-        /// Get All Chapters as a List
+        /// Get all chapter details
         /// </summary>
-        /// <returns>Returns chapter list</returns>
-        [Authorize(Roles = "admin")]
-        [HttpGet]        
-        public List<Chapter> GetChapters()
+        /// <returns>The chapter list.</returns>
+        [HttpGet]
+        [Route("")]
+        public List<Chapter> Get()
         {
-            var a = this.chapterService.Get().ToList<Chapter>();
-            return a;
+            List<Chapter> chapters = null;
+            try
+            {
+                chapters = this.chapterService.Get();
+            }
+            catch (Exception e)
+            {
+                Debug.Print(e.Message);
+                throw e;
+            }
+
+            return chapters;
         }
 
         /// <summary>
-        /// Get chapter by id
+        /// Get chapter using id
         /// </summary>
-        /// <param name="id">The id</param>
+        /// <param name="id">The chapter id</param>
         /// <returns>Returns chapter</returns>
         [HttpGet]
         [Route("{id:int}")]
-        public Chapter GetChapterById(int id)
+        public Chapter Get(int id)
         {
-            return this.chapterService.GetById(id);
+            Chapter chapter = null;
+            try
+            {
+                chapter = this.chapterService.GetById(id);
+            }
+            catch (Exception e)
+            {
+                Debug.Print(e.Message);
+                throw e;
+            }
+
+            return chapter;
         }
 
         /// <summary>
-        /// Update Chapter
+        /// Create new chapter
         /// </summary>
         /// <param name="chapter">The chapter</param>
-        [HttpPut]
-        public void UpdateChapter(Chapter chapter)
-        {
-            this.chapterService.Update(chapter);            
-        }
-
-        /// <summary>
-        /// Add Chapter
-        /// </summary>
-        /// <param name="chapter">The chapter object</param>
         [HttpPost]
-        public void AddChapter(Chapter chapter)
+        [Route("")]
+        public void Post([FromBody] Chapter chapter)
         {
             try
             {
-                this.chapterService.Insert(chapter);
+                chapter.CreatedDate = DateTime.Now;
+                chapter.CreatedBy = 1;
+                this.chapterService.Create(chapter);
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                throw;
+                Debug.Print(e.Message);
+                throw e;
+            }
+        }
+
+        /// <summary>
+        /// Create new chapter
+        /// </summary>
+        /// <param name="chapter">The chapter</param>
+        [HttpPut]
+        [Route("")]
+        public void Put([FromBody] Chapter chapter)
+        {
+            try
+            {
+                chapter.CreatedDate = DateTime.Now;
+                chapter.CreatedBy = 1;
+                this.chapterService.Update(chapter);
+            }
+            catch (Exception e)
+            {
+                Debug.Print(e.Message);
+                throw e;
             }
         }
     }
